@@ -1,0 +1,6 @@
+# Repo tracks only the new project. Everything else in this folder
+# (old scripts, FCI Reports deliverables/photos, dev workspace with
+# plain-text token) stays local and is never committed.
+/*
+!/.gitignore
+!/smartsheet-docgen/

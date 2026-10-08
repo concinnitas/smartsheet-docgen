@@ -1,0 +1,10 @@
+config/.env
+config/config.json
+__pycache__/
+*.pyc
+.venv/
+output/*
+!output/.keep
+cache/attachments/*
+!cache/attachments/.keep
+~$*.docx

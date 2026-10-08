@@ -1,0 +1,101 @@
+{
+  "static_cell_mappings": {
+    "[PROJECT_NAME]": {
+      "location": { "row": 1, "column": "PROJECT NAME" },
+      "fallback": "Unknown Project"
+    },
+    "[ADDRESS]": {
+      "location": { "row": 1, "column": "ADDRESS" },
+      "fallback": "No Address Provided"
+    },
+    "[RACKING_TYPE]": {
+      "location": { "row": 1, "column": "RACKING TYPE" },
+      "fallback": "Unknown Racking Type"
+    },
+    "[RACKING_LOCATION]": {
+      "location": { "row": 1, "column": "RACKING LOCATION" },
+      "fallback": "Unknown Location"
+    },
+    "[DC_CAPACITY]": {
+      "location": { "row": 1, "column": "DC CAPACITY" },
+      "fallback": "No DC Capacity"
+    },
+    "[AC_CAPACITY]": {
+      "location": { "row": 1, "column": "AC CAPACITY" },
+      "fallback": "No AC Capacity"
+    },
+    "[INV_1_COUNT]": {
+      "location": { "row": 1, "column": "INVERTER 1 COUNT" },
+      "fallback": "0"
+    },
+    "[INV_1_TYPE]": {
+      "location": { "row": 1, "column": "INVERTER 1 TYPE" },
+      "fallback": "Unknown Inverter Type"
+    },
+    "[INV_2_COUNT]": {
+      "location": { "row": 1, "column": "INVERTER 2 COUNT" },
+      "fallback": ""
+    },
+    "[INV_2_TYPE]": {
+      "location": { "row": 1, "column": "INVERTER 2 TYPE" },
+      "fallback": "N/A"
+    },
+    "[MOD_COUNT]": {
+      "location": { "row": 1, "column": "MOD COUNT" },
+      "fallback": "0"
+    },
+    "[MOD_TYPE]": {
+      "location": { "row": 1, "column": "MOD TYPE" },
+      "fallback": "Unknown Module Type"
+    },
+    "[MLPE_COUNT]": {
+      "location": { "row": 1, "column": "MLPE COUNT" },
+      "fallback": "N/A"
+    },
+    "[MLPE_TYPE]": {
+      "location": { "row": 1, "column": "MLPE TYPE" },
+      "fallback": ""
+    },
+    "[IX_TYPE]": {
+      "location": { "row": 1, "column": "IX TYPE" },
+      "fallback": "Unknown IX Type"
+    },
+    "[IX_VOLTAGE]": {
+      "location": { "row": 1, "column": "IX VOLTAGE" },
+      "fallback": "No Voltage Specified"
+    }
+  },
+  "dynamic_section_mappings": {
+    "group_by_column": "Name",
+    "fields": {
+      "[ISSUE_ID]": {
+        "column_name": "ISSUE ID",
+        "fallback": "Unknown ID"
+      },
+      "[LOCATION]": {
+        "column_name": "LOCATION",
+        "fallback": "No Location Specified"
+      },
+      "[INSPECTION_COMMENT]": {
+        "column_name": "INSPECTION COMMENT",
+        "fallback": "No Inspection Comment"
+      },
+      "[STATUS]": {
+        "column_name": "STATUS",
+        "fallback": "No Status"
+      },
+      "[DATE]": {
+        "column_name": "DATE",
+        "fallback": ""
+      },
+      "[CONTRACTOR_RESPONSE]": {
+        "column_name": "CONTRACTOR RESPONSE",
+        "fallback": "No Contractor Response"
+      },
+      "[AGI_COMMENT]": {
+        "column_name": "AGI COMMENT",
+        "fallback": "No AGI Comment"
+      }
+    }
+  }
+}
