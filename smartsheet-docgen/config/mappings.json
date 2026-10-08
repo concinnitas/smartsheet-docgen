@@ -1,101 +1,158 @@
 {
   "static_cell_mappings": {
-    "[PROJECT_NAME]": {
-      "location": { "row": 1, "column": "PROJECT NAME" },
+    "PROJECT_NAME": {
+      "location": {
+        "row": 1,
+        "column": "PROJECT NAME"
+      },
       "fallback": "Unknown Project"
     },
-    "[ADDRESS]": {
-      "location": { "row": 1, "column": "ADDRESS" },
+    "ADDRESS": {
+      "location": {
+        "row": 1,
+        "column": "ADDRESS"
+      },
       "fallback": "No Address Provided"
     },
-    "[RACKING_TYPE]": {
-      "location": { "row": 1, "column": "RACKING TYPE" },
+    "RACKING_TYPE": {
+      "location": {
+        "row": 1,
+        "column": "RACKING TYPE"
+      },
       "fallback": "Unknown Racking Type"
     },
-    "[RACKING_LOCATION]": {
-      "location": { "row": 1, "column": "RACKING LOCATION" },
+    "RACKING_LOCATION": {
+      "location": {
+        "row": 1,
+        "column": "RACKING LOCATION"
+      },
       "fallback": "Unknown Location"
     },
-    "[DC_CAPACITY]": {
-      "location": { "row": 1, "column": "DC CAPACITY" },
+    "DC_CAPACITY": {
+      "location": {
+        "row": 1,
+        "column": "DC CAPACITY"
+      },
       "fallback": "No DC Capacity"
     },
-    "[AC_CAPACITY]": {
-      "location": { "row": 1, "column": "AC CAPACITY" },
+    "AC_CAPACITY": {
+      "location": {
+        "row": 1,
+        "column": "AC CAPACITY"
+      },
       "fallback": "No AC Capacity"
     },
-    "[INV_1_COUNT]": {
-      "location": { "row": 1, "column": "INVERTER 1 COUNT" },
+    "INV_1_COUNT": {
+      "location": {
+        "row": 1,
+        "column": "INVERTER 1 COUNT"
+      },
       "fallback": "0"
     },
-    "[INV_1_TYPE]": {
-      "location": { "row": 1, "column": "INVERTER 1 TYPE" },
+    "INV_1_TYPE": {
+      "location": {
+        "row": 1,
+        "column": "INVERTER 1 TYPE"
+      },
       "fallback": "Unknown Inverter Type"
     },
-    "[INV_2_COUNT]": {
-      "location": { "row": 1, "column": "INVERTER 2 COUNT" },
+    "INV_2_COUNT": {
+      "location": {
+        "row": 1,
+        "column": "INVERTER 2 COUNT"
+      },
       "fallback": ""
     },
-    "[INV_2_TYPE]": {
-      "location": { "row": 1, "column": "INVERTER 2 TYPE" },
+    "INV_2_TYPE": {
+      "location": {
+        "row": 1,
+        "column": "INVERTER 2 TYPE"
+      },
       "fallback": "N/A"
     },
-    "[MOD_COUNT]": {
-      "location": { "row": 1, "column": "MOD COUNT" },
+    "MOD_COUNT": {
+      "location": {
+        "row": 1,
+        "column": "MOD COUNT"
+      },
       "fallback": "0"
     },
-    "[MOD_TYPE]": {
-      "location": { "row": 1, "column": "MOD TYPE" },
+    "MOD_TYPE": {
+      "location": {
+        "row": 1,
+        "column": "MOD TYPE"
+      },
       "fallback": "Unknown Module Type"
     },
-    "[MLPE_COUNT]": {
-      "location": { "row": 1, "column": "MLPE COUNT" },
+    "MLPE_COUNT": {
+      "location": {
+        "row": 1,
+        "column": "MLPE COUNT"
+      },
       "fallback": "N/A"
     },
-    "[MLPE_TYPE]": {
-      "location": { "row": 1, "column": "MLPE TYPE" },
+    "MLPE_TYPE": {
+      "location": {
+        "row": 1,
+        "column": "MLPE TYPE"
+      },
       "fallback": ""
     },
-    "[IX_TYPE]": {
-      "location": { "row": 1, "column": "IX TYPE" },
+    "IX_TYPE": {
+      "location": {
+        "row": 1,
+        "column": "IX TYPE"
+      },
       "fallback": "Unknown IX Type"
     },
-    "[IX_VOLTAGE]": {
-      "location": { "row": 1, "column": "IX VOLTAGE" },
+    "IX_VOLTAGE": {
+      "location": {
+        "row": 1,
+        "column": "IX VOLTAGE"
+      },
       "fallback": "No Voltage Specified"
     }
   },
   "dynamic_section_mappings": {
     "group_by_column": "Name",
     "fields": {
-      "[ISSUE_ID]": {
+      "ISSUE_ID": {
         "column_name": "ISSUE ID",
         "fallback": "Unknown ID"
       },
-      "[LOCATION]": {
+      "LOCATION": {
         "column_name": "LOCATION",
         "fallback": "No Location Specified"
       },
-      "[INSPECTION_COMMENT]": {
+      "INSPECTION_COMMENT": {
         "column_name": "INSPECTION COMMENT",
         "fallback": "No Inspection Comment"
       },
-      "[STATUS]": {
+      "STATUS": {
         "column_name": "STATUS",
         "fallback": "No Status"
       },
-      "[DATE]": {
+      "DATE": {
         "column_name": "DATE",
         "fallback": ""
       },
-      "[CONTRACTOR_RESPONSE]": {
+      "CONTRACTOR_RESPONSE": {
         "column_name": "CONTRACTOR RESPONSE",
         "fallback": "No Contractor Response"
       },
-      "[AGI_COMMENT]": {
+      "AGI_COMMENT": {
         "column_name": "AGI COMMENT",
         "fallback": "No AGI Comment"
       }
     }
+  },
+  "image_mappings": {
+    "_comment": "Row attachments split into before/after. Uploader email in inspector_emails => BEFORE; anyone else => AFTER. If all photos come from one side, oldest => BEFORE and newest => AFTER. When several match, 'pick' chooses which one is used.",
+    "inspector_emails": [
+      "bottchers@starktech.com"
+    ],
+    "pick": "latest",
+    "width_inches": 3.0,
+    "missing_text": "No photo provided"
   }
 }

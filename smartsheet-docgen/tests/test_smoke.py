@@ -1,35 +1,38 @@
-"""Offline smoke test: renders a generated template with text, a loop, and an image."""
-import sys
+"""Renders the converted FCI template end to end with real docxtpl + images."""
 from pathlib import Path
 
+import pytest
 from docx import Document
 from PIL import Image
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
-from docgen.render import inline_image, render  # noqa: E402
+docxtpl = pytest.importorskip("docxtpl")
+
+from docgen.context import build_context  # noqa: E402
+from docgen.render import image_factory_for, render  # noqa: E402
+from fakes import COLUMNS, ROWS, make_sheet  # noqa: E402
+
+ROOT = Path(__file__).resolve().parents[1]
+TEMPLATE = ROOT / "templates" / "FCI_TEMPLATE_docxtpl.docx"
 
 
-def test_render_text_loop_and_image(tmp_path):
-    tpl_path = tmp_path / "t.docx"
-    d = Document()
-    d.add_paragraph("{{ PROJECT_NAME }}")
-    d.add_paragraph("{% for row in rows %}")
-    d.add_paragraph("Item {{ row.ISSUE_ID }} {{ row.PHOTO }}")
-    d.add_paragraph("{% endfor %}")
-    d.save(tpl_path)
-
-    img = tmp_path / "p.png"
-    Image.new("RGB", (40, 30), "red").save(img)
+def test_render_fci_template_with_photos(tmp_path):
+    from docgen import settings
+    mappings = settings.load_mappings()
+    img = tmp_path / "p.jpg"
+    Image.new("RGB", (400, 300), "red").save(img)
 
     out = render(
-        tpl_path,
-        lambda tpl: {
-            "PROJECT_NAME": "Test Project",
-            "rows": [{"ISSUE_ID": i, "PHOTO": inline_image(tpl, img, 1)} for i in (1, 2)],
-        },
+        TEMPLATE,
+        lambda tpl: build_context(
+            make_sheet(COLUMNS, ROWS), "Sunny Acres", mappings,
+            photo_provider=lambda row: (img, img if row.id == 1000 else None, []),
+            image_factory=image_factory_for(tpl, 3.0),
+        )[0],
         tmp_path / "out.docx",
     )
     doc = Document(out)
-    text = "\n".join(p.text for p in doc.paragraphs)
-    assert "Test Project" in text and "Item 1" in text and "Item 2" in text
-    assert len(doc.inline_shapes) == 2
+    xml = doc.element.xml
+    assert "{{" not in xml and "{%" not in xml
+    assert "Item #1" in xml and "Item #2" in xml and "Sunny Acres Solar" in xml
+    assert len(doc.inline_shapes) >= 3  # 2 photos on item 1, 1 on item 2
+    assert "No photo provided" in xml
